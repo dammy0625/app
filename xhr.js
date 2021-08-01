@@ -23,9 +23,13 @@ sele.onchange = ()=>{const xhr = new XMLHttpRequest
   
   }
 
-  xhr.onerror = ()=>{alert("unable to load avtivity...am sorry....check that you have an internet connection though")}
-  
+  xhr.onerror = ()=>{
+    const xhr = new XMLHttpRequest
+    xhr.open("GET",'http://www.boredapi.com/api/activity?type='+ sele.value )
+    xhr.send() 
   }
+  
+}
 inp.onkeyup= ()=>{const vhr = new XMLHttpRequest
   vhr.open("GET",'http://www.boredapi.com/api/activity?participants='+ inp.value )
   vhr.send() 
